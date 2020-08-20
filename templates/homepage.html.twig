@@ -3,5 +3,14 @@
 {% block content %}
 <h1>Homepage</h1>
 
-<p>Welcome to our shop. Today is <strong>{{ day }}</strong>.</p>
+<div class="product-list">
+{% for bike in bikes %}
+<div>
+    {% if bike.image %}<a href="/products/{{ bike.id }}"><img src="/images/{{ bike.image }}" alt=""></a>{% endif %}
+    <h2><a href="/products/{{ bike.id }}">{{ bike.name }}</a></h2>
+    £{{ bike.price }}
+</div>
+{% endfor %}
+</div>
+
 {% endblock %}

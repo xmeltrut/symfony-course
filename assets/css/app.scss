@@ -1,0 +1,70 @@
+$baseline: 24px;
+
+body {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+footer {
+    background: lightblue;
+    padding: $baseline;
+
+    hr {
+        display: none;
+    }
+}
+
+header {
+    background: lightblue;
+    font-size: 300%;
+    padding: $baseline;
+
+    hr {
+        display: none;
+    }
+}
+
+main {
+    padding: $baseline;
+
+    .breadcrumbs {
+        a:link, a:visited, a:hover, a:active {
+            color: black;
+        }
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .product-details {
+        display: grid;
+        grid-gap: $baseline;
+        grid-template-columns: 300px 1fr;
+        align-items: center;
+    }
+
+    .product-list {
+        display: grid;
+        grid-gap: ($baseline / 2);
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+        div {
+            text-align: center;
+        }
+
+        a:link, a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            color: #666;
+        }
+    }
+}

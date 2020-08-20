@@ -6,14 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomepageController extends AbstractController
+class WelcomeController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/welcome")
      */
     public function homepage(): Response
     {
-        return $this->render('homepage.html.twig', [
+        return $this->render('welcome.html.twig', [
             'day' => date('l')
         ]);
     }
