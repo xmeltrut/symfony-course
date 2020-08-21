@@ -1,5 +1,18 @@
 $baseline: 24px;
 
+
+.basket {
+    align-items: center;
+    display: grid;
+    grid-gap: $baseline;
+    grid-template-columns: 100px 2fr 1fr 1fr;
+    max-width: 600px;
+
+    img {
+        max-width: 100px;
+    }
+}
+
 body {
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 16px;
@@ -15,10 +28,45 @@ footer {
     }
 }
 
+form {
+    button {
+        background-color: #638C99;
+        border: #638C99 1px solid;
+        border-radius: 0;
+        color: #fff;
+        font-size: 100%;
+        padding: 15px 15px 16px 15px;
+    }
+
+    button:hover, button:active {
+        background-color: #2E5866;
+        border-color: #2E5866;
+    }
+
+    button:disabled {
+        background-color: #997754;
+        border-color: #997754;
+        color: #E6C9AC;
+    }
+}
+
 header {
     background: lightblue;
     font-size: 300%;
     padding: $baseline;
+
+    a {
+        background-color: #638C99;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 60%;
+        text-decoration: none;
+        padding: 6px 12px 8px 12px;
+    }
+
+    a:hover, a:active {
+        background-color: #4D6066;
+    }
 
     hr {
         display: none;

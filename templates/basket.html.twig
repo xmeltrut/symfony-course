@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+    <a href="/">Homepage</a> &raquo;
+</div>
+
+<h1>Basket</h1>
+
+<div class="basket">
+{% for bike in basket %}
+    <div>{% if bike.image %}<img src="/images/{{ bike.image }}" alt="">{% endif %}</div>
+    <div>{{ bike.name }}</div>
+    <div>£{{ bike.price }}</div>
+    <div>
+        <form method="post">
+            <button>Remove</button>
+            <input type="hidden" name="id" value="{{ bike.id }}">
+        </form>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
