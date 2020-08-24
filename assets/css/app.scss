@@ -11,12 +11,47 @@ $baseline: 24px;
     img {
         max-width: 100px;
     }
+
+    .total {
+        font-weight: bold;
+    }
+}
+
+.basket-form {
+    margin-top: $baseline;
 }
 
 body {
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 16px;
     margin: 0;
+}
+
+.checkout-total {
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: $baseline;
+}
+
+div#form {
+    margin-top: ($baseline / 2);
+    max-width: 500px;
+
+    input, textarea {
+        box-sizing: border-box;
+        margin-bottom: ($baseline / 2);
+        padding: ($baseline / 2);
+        width: 100%;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
 }
 
 footer {

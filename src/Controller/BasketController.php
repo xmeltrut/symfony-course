@@ -22,7 +22,7 @@ class BasketController extends AbstractController
             $session->set('basket', $basket);
         }
 
-        $total = array_sum(array_map(function($bike) { return $bike->getPrice(); }, $basket));
+        $total = array_sum(array_map(function($product) { return $product->getPrice(); }, $basket));
 
         return $this->render('basket.html.twig', [
             'basket' => $basket,
