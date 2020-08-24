@@ -12,7 +12,7 @@
 {% for bike in basket %}
     <div>{% if bike.image %}<img src="/images/{{ bike.image }}" alt="">{% endif %}</div>
     <div>{{ bike.name }}</div>
-    <div>£{{ bike.price }}</div>
+    <div>£{{ bike.price | number_format(2) }}</div>
     <div>
         <form method="post">
             <button>Remove</button>
@@ -20,6 +20,9 @@
         </form>
     </div>
 {% endfor %}
+    <div></div>
+    <div class="total">Total</div>
+    <div class="total">£{{ total | number_format(2) }}</div>
 </div>
 
 {% endblock %}

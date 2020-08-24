@@ -8,15 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-use App\Repository\ProductRepository;
-
 class BasketController extends AbstractController
 {
     /**
      * @Route("/basket")
      */
-    public function basket(Request $request, ProductRepository $repo, SessionInterface $session): Response
+    public function basket(Request $request, SessionInterface $session): Response
     {
         $basket = $session->get('basket', []);
 
@@ -25,8 +22,11 @@ class BasketController extends AbstractController
             $session->set('basket', $basket);
         }
 
+        $total = array_sum(array_map(function($bike) { return $bike->getPrice(); }, $basket));
+
         return $this->render('basket.html.twig', [
-            'basket' => $basket
+            'basket' => $basket,
+            'total' => $total
         ]);
     }
 }
