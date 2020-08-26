@@ -1,0 +1,11 @@
+<h1>Order #{{ order.id }}</h1>
+
+<p>Thank you for your order. You have purchased the following:</p>
+
+<ul>
+{% for product in order.products %}
+    <li>{{ product.name }}</li>
+{% endfor %}
+</ul>
+
+<p>We will confirm when your order has been dispatched.</p>
